@@ -20,3 +20,8 @@ jobs:
         with:
           name: dokuman
           path: output.pdf
+      - name: Git Auto Commit
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Otomatik PDF Güncelleme"
+          file_pattern: 'output.pdf'
