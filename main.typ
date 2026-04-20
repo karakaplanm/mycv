@@ -2,4 +2,4 @@
 This is test.
 #lorem(100)
 
-New line
+New line of test
