@@ -1,5 +1,6 @@
 name: Typst Derleme
 on: [push]
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -7,8 +8,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Typst Compile
-        uses: chataigne/setup-typst@v1
+      # En güncel ve resmi topluluk action'ı
+      - name: Setup Typst
+        uses: typst-community/setup-typst@v3
 
       - name: Run Typst
         run: typst compile main.typ output.pdf
@@ -16,5 +18,5 @@ jobs:
       - name: Upload PDF
         uses: actions/upload-artifact@v4
         with:
-          name: pdf-dosyasi
+          name: dokuman
           path: output.pdf
